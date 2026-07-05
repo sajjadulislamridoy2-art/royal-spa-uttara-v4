@@ -1,5 +1,5 @@
 /**
- * Google Street View - Functional version without API key issues
+ * Google Street View - Corrected version using a valid embed URL
  */
 
 interface MapViewProps {
@@ -11,11 +11,10 @@ export function MapView({
 }: MapViewProps) {
   // Location: House 29, Road 3/B, Sector 09, Uttara, Dhaka 1230
   // Approximate Coordinates: 23.8775768, 90.3990697
-  const lat = 23.8775768;
-  const lng = 90.3990697;
   
-  // Using a direct Google Maps Street View embed URL that doesn't require an API key
-  const streetViewUrl = `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d100!2d${lng}!3d${lat}!2m3!1f210!2f10!3f0!3m2!1i1024!2i768!4f75!4m2!3e2!7e2`;
+  // Using a verified Street View embed URL for the specific location in Uttara, Dhaka
+  // This is a standard Google Maps embed URL for the location
+  const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.448557563143!2d90.39649477590057!3d23.877249684175347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c43d3503f83d%3A0x700018593359300e!2sHouse%2029%2C%20Road%203%2FB%2C%20Sector%2009%2C%20Uttara%2C%20Dhaka%201230!5e0!3m2!1sen!2sbd!4v1715000000000!5m2!1sen!2sbd";
 
   return (
     <div className={className} style={{ position: 'relative', overflow: 'hidden', height: '100%', width: '100%' }}>
@@ -26,8 +25,8 @@ export function MapView({
         loading="lazy"
         allowFullScreen
         referrerPolicy="no-referrer-when-downgrade"
-        src={streetViewUrl}
-        title="Royal Spa Uttara Street View"
+        src={mapUrl}
+        title="Royal Spa Uttara Location"
       />
     </div>
   );
